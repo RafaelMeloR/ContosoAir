@@ -6,7 +6,8 @@
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - mastersteps:
+  - master
+steps:
   - task: Npm@1
     inputs:
       command: 'custom'
@@ -41,3 +42,4 @@ trigger:
       TargetFolder: $(build.artifactstagingdirectory)/Templates
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
+
